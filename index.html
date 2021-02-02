@@ -1,218 +1,81 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Love You </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
 </head>
+<!--
+Name : Rifki Prayoga 
+Template: Nembak betina
+-->
+
 <body>
-<body style="background-image:url(http://yeusoaicat91.files.wordpress.com/2013/04/taochu_bgr_20.gif?w=300&h=230)">
-<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false' onselectstart='return false' style='-moz-user-select: none; cursor: default;'>
-<embed src="http://www.youtube.com/v/jStNaVCW838&autoplay=1" type="application/x-shockwave-flash"wmode="transparent" width="1" height="1"></embed>
-<a display:style='display:scroll; position:fixed; bottom:0px; left:2px'title=''><img src='https://media.giphy.com/media/6cFzW0jGScbEfz31RQ/giphy.gif'width="150px" height="100px" alt="./Ez0L" /></a>"
-<a style='display:scroll;position:fixed;bottom:0px;right:2px;' title=''><font face=calibri"12">Nadjib</font>'width="150px" height="100px" alt="./Ez0L" /></a>"
-<center>
-<br><br><br><br>
-<script>
+    <section>
+        <div class="textme">
+            <h1>Hai Putri</h1>
+            <p>aku kangen sama kamu, kira kira kamu kangen juga gk yah? hehehe </p>
+<div class="jancok">
 
-TypingText = function(element, interval, cursor, finishedCallback) {
 
-if((typeof document.getElementById == "undefined") || (typeof element.innerHTML == "undefined")) {
+            <div class="wrap">
+                <a href="#modal-one" class="btn btn-big">kangen</a>
+            </div>
 
-this.running = true; // Never run.
+            <!------------------------Modal--------------------------------------------------->
+            
+            <div class="modal" id="modal-one" arial-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-header">
+                        <h2>mau </h2>
+                        <p>kita emg udh lama berpisah, tpi perasaan ku tak bisa berbohong...  aku kangen sama kamu :'(
+                        
+                        </p>
+                        <a href="#close" class="btn-close" arial-hidden="true">x</a> <!-- Ganti ke close-->
+                    </div>
+                    <div class="modal-body">
+                        <img class="gambar1w" src="images/kucing.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="https://wa.me/6285728218620?text=Saya menerima nya" class="btn">Kirim Jawaban</a> <!--ganti ke close-->
+                        
+                    </div>
+                    
+                    </div>
 
-return;
+        <!------------------------modal kedua ------------------------------------------->
 
-}
+        <div class="wrap2">
+            <a href="#modal-one2" class="btn btn-big2">enggak</a>
+        </div>
 
-this.element = element;
+         <div class="modal2" id="modal-one2" arial-hidden="true">
+            <div class="modal-dialog2">
+                <div class="modal-header2">
+                    <h2>Jawaban Kamu enggak mau</h2>
+                    <p>kalo kamu gk kangen, tolong kasih tau kenapa dong.. biar aku bisa memperbaiki diri :)
+                    </p>
+                    <a href="#close2" class="btn-close2" arial-hidden="true">x</a> <!-- Ganti ke close-->
+                </div>
+                <div class="modal-body2">
+                    <img class="gambar1" src="images/buset.jpg" style="width:261px">
+                </div>
+                <div class="modal-footer2">
+                    <a href="https://wa.me/6285728218620?text=saya tidak menerima, dengan alasan" class="btn2">Kirim Jawaban</a> <!--ganti ke close-->
+                </div>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+      </div>        
+    </section>
 
-this.finishedCallback = (finishedCallback ? finishedCallback : function() { return; });
-
-this.interval = (typeof interval == "undefined" ? 100 : interval);
-
-this.origText = this.element.innerHTML;
-
-this.unparsedOrigText = this.origText;
-
-this.cursor = (cursor ? cursor : "");
-
-this.currentText = "";
-
-this.currentChar = 0;
-
-this.element.typingText = this;
-
-if(this.element.id == "") this.element.id = "typingtext" + TypingText.currentIndex++;
-
-TypingText.all.push(this);
-
-this.running = false;
-
-this.inTag = false;
-
-this.tagBuffer = "";
-
-this.inHTMLEntity = false;
-
-this.HTMLEntityBuffer = "";
-
-}
-
-TypingText.all = new Array();
-
-TypingText.currentIndex = 0;
-
-TypingText.runAll = function() {
-
-for(var i = 0; i < TypingText.all.length; i++) TypingText.all[i].run();
-
-}
-
-TypingText.prototype.run = function() {
     
-if(this.running) return;
-
-if(typeof this.origText == "undefined") {
-
-setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval); // We haven't finished loading yet. Have patience.
-
-return;
-
-}
-
-if(this.currentText == "") this.element.innerHTML = "";
-
-// this.origText = this.origText.replace(/<([^<])*>/, ""); // Strip HTML from text.
-
-if(this.currentChar < this.origText.length) {
-
-if(this.origText.charAt(this.currentChar) == "<" && !this.inTag) {
-
-this.tagBuffer = "<";
-
-this.inTag = true;
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else if(this.origText.charAt(this.currentChar) == ">" && this.inTag) {
-
-this.tagBuffer += ">";
-
-this.inTag = false;
-
-this.currentText += this.tagBuffer;
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else if(this.inTag) {
-
-this.tagBuffer += this.origText.charAt(this.currentChar);
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else if(this.origText.charAt(this.currentChar) == "&" && !this.inHTMLEntity) {
-
-this.HTMLEntityBuffer = "&";
-
-this.inHTMLEntity = true;
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else if(this.origText.charAt(this.currentChar) == ";" && this.inHTMLEntity) {
-
-this.HTMLEntityBuffer += ";";
-
-this.inHTMLEntity = false;
-
-this.currentText += this.HTMLEntityBuffer;
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else if(this.inHTMLEntity) {
-
-this.HTMLEntityBuffer += this.origText.charAt(this.currentChar);
-
-this.currentChar++;
-
-this.run();
-
-return;
-
-} else {
-
-this.currentText += this.origText.charAt(this.currentChar);
-
-}
-
-this.element.innerHTML = this.currentText;
-
-this.element.innerHTML += (this.currentChar < this.origText.length - 1 ? (typeof this.cursor == "function" ? this.cursor(this.currentText) : this.cursor) : "");
-
-this.currentChar++;
-
-setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval);
-
-} else {
-
-this.currentText = "";
-
-this.currentChar = 0;
-
-this.running = false;
-
-this.finishedCallback();
-
-}
-
-}
-
-</script>
-
-<p id="info">
-<font face="courier new"><font color="white"><font size="10">Aku ingin mencintaimu dengan sederhana</font><br>
-<font face="courier new"><font color="white"><font size="10">Dengan kata yang tak sempat<br>
-<font face="courier new"><font color="white"><font size="10">Diucapkan kayu<br>
-<font face="courier new"><font color="white"><font size="10"><font color="white"><font size="10">kepada api yang menjadikannya abu</font><br>
-<br>
-<br>
-<br>
-<b><font face="courier new"><font color="red"><font size="10">Love you Na <3</font><br>
-<br></p>
-
-<script type="text/javascript">
-
-//Define first typing example:
-
-//Define second typing example (use "slashing" cursor at the end):
-
-new TypingText(document.getElementById("info"), 70, function(i){
-
-var ar = new Array("_"," ","_","_"); return " " + ar[i.length %
-
-ar.length]; });
-
-//Type out examples:
-
-TypingText.runAll();
-
-</script></br>
-<script src="http://masterendi.googlecode.com/files/salju.js"></script>
+</body>
 </html>
