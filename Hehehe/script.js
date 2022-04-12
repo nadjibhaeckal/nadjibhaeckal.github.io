@@ -9,13 +9,13 @@ const elts = {
 
 // The strings to morph between. You can change these to anything you want!
 const texts = [
-	"Don't you think I loved ",
-	"you too much to ",
-	"be used and discarded?",
-	"Don't you think I loved",
-	"you too much to",
-	"to think",
-	"I deserve nothing?"
+	"Why",
+	"is",
+	"this",
+	"so",
+	"satisfying",
+	"to",
+	"watch?"
 ];
 
 // Controls the speed of morphing.
