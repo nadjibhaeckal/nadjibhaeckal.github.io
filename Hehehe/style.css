@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: radial-gradient(ellipse at bottom, #266dbf 0%, #91a0eb 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
   filter: drop-shadow(0 0 10px white);
 }
@@ -47,6 +47,7 @@ body {
     }
   }
 }
+
 /* Explanation in JS tab */
 
 /* Cool font from Google Fonts! */
@@ -77,7 +78,6 @@ body {
 	
 	font-family: 'Raleway', sans-serif;
 	font-size: 80pt;
-  color: white;
 	
 	text-align: center;
 	
