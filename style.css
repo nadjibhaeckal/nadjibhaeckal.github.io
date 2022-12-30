@@ -1,311 +1,109 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arimo', sans-serif;
-    
-
-}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,600,700,800);
 body {
-    background-color: linear-gradient( #EE7752, #E73C7E, #23A6D5,#23D5AB);
+  height: 100vh;
+  background-image: radial-gradient(#374566, #010203);
+  color: #ccc;
+  font-family: Raleway;
+  letter-spacing: 0.15em;
+  font-size: 20px;
+}
+canvas {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+#wishes {
+  width: 20em;
+  margin: calc(50vh - 6.7em) auto;
+  border: 1px dotted;
+  text-align: center;
+  background: hsla(210, 50%, 15%, 0.75);
+}
+span {
+  display: inline-block;
+}
+span.jump {
+  animation: jump 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s 2 alternate;
+}
+@keyframes jump {
+  to {
+    transform: translateY(-0.7em);
+  }
 }
 
-
-
-html {
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+#pleaseClick {
+  position: absolute;
+  background: hsla(210, 50%, 15%, 0.75);
+  font-size: 80%;
+  width: 10em;
+  text-align: center;
+  left: calc(50vw - 5em);
+  top: calc(50vh - 12.5em);
+  animation: jump 1s ease-in-out infinite alternate;
+}
+#pleaseClick span {
+  font-size: 200%;
 }
 
-section {
-    width: 100%;
-    height: 100vh;
-    color: #fff;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5,#23D5AB);
-    background-size: 400% 400%;
-    position: relative;
-    animation: change 10s ease-in-out infinite;
-
+.control {
+  text-align: center;
 }
 
-.textme {
-    border: 2px solid #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 5rem 10rem;
-    cursor: pointer;
-    border-radius: 20px;
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18em;
 }
 
-h1 {
-    font-family: 'Arimo', sans-serif;
-    font-size: 5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-}
-h1:hover {
-    color: dodgerblue;
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #777;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #374566;
+  border-radius: 50%;
+  margin-top: -9px;
 }
 
-.textme p {
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Arimo', sans-serif;
-    
-
-
+input[type="range"]::-moz-range-thumb {
+  background-color: #777;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #333;
+  border-radius: 50%;
 }
 
-/*pembungkus dalam jancok */
-
-.jancok {
-    display: inline-flex;
-    letter-spacing: 5px;
+input[type="range"]::-ms-thumb {
+  background-color: #777;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #333;
+  border-radius: 50%;
 }
-/*modal*/
 
-  .wrap {
-    padding: 40px;
-    text-align: center;
-  }
-  .btn {
-    background: #428bca;
-    border: #357ebd solid 1px;
-    border-radius: 3px;
-    color: #fff;
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 15px;
-    text-decoration: none;
-    text-align: center;
-    min-width: 60px;
-    position: relative;
-    transition: color 0.1s ease;
-    /* top: 40em;*/
-  }
-  .btn:hover {
-    background: #357ebd;
-  }
-  .btn.btn-big {
-    font-size: 18px;
-    padding: 15px 20px;
-    min-width: 100px;
-    border-radius: 20px;
-
-  }
-  .btn-close {
-    color: #aaa;
-    font-size: 30px;
-    text-decoration: none;
-    position: absolute;
-    right: 5px;
-    top: 0;
-  }
-  .btn-close:hover {
-    color: #919191;
-  }
-  .modal:before {
-    content: "";
-    display: none;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-  }
-  .modal:target:before {
-    display: block;
-  }
-  .modal:target .modal-dialog {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-    top: -1%;
-    left: 200px;
-    width: 100%;
-  }
-  .modal-dialog {
-    background: #fefefe;
-    color:#23A6D5;
-    border: #333 solid 1px;
-    border-radius: 5px;
-    margin-left: -200px;
-    position: fixed;
-    left: 50%;
-    top: -100%;
-    z-index: 11;
-    width: 360px;
-    -webkit-transform: translate(0, -500%);
-    -ms-transform: translate(0, -500%);
-    transform: translate(0, -500%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    -moz-transition: -moz-transform 0.3s ease-out;
-    -o-transition: -o-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-  }
-  .modal-body {
-    padding: 20px;
-  }
-  .modal-header,
-  .modal-footer {
-    padding: 10px 20px;
-  }
-  .modal-header {
-    border-bottom: #eee solid 1px;
-  }
-  .modal-header h2 {
-    font-size: 20px;
-  }
-  .modal-footer {
-    border-top: #eee solid 1px;
-    text-align: right;
-  }
-  /*ADDED TO STOP SCROLLING TO TOP*/
-  #close {
-    display: none;
-  }
-  
-/*MODAL KEDUA FUNGSI NYA SAMA KEK MODAL SATU*/
-
-
-.wrap2 {
-    padding: 40px;
-    text-align: center;
-  }
-  .btn2 {
-    background: #428bca;
-    border: #357ebd solid 1px;
-    border-radius: 3px;
-    color: #fff;
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 15px;
-    text-decoration: none;
-    text-align: center;
-    min-width: 60px;
-    position: relative;
-    transition: color 0.1s ease;
-    /* top: 40em;*/
-  }
-  .btn2:hover {
-    background: #357ebd;
-  }
-  .btn.btn-big2 {
-    font-size: 18px;
-    padding: 15px 20px;
-    min-width: 100px;
-    border-radius: 20px;
-  }
-  .btn-close2 {
-    color: #aaa;
-    font-size: 30px;
-    text-decoration: none;
-    position: absolute;
-    right: 5px;
-    top: 0;
-  }
-  .btn-close2:hover {
-    color: #919191;
-  }
-  .modal2:before {
-    content: "";
-    display: none;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-  }
-  .modal2:target:before {
-    display: block;
-  }
-  .modal2:target .modal-dialog2 {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-    top: -1%;
-    left: 200px;
-    width: 100%;
-  }
-  .modal-dialog2{
-    background: #fefefe;
-    color:#23A6D5;
-    border: #333 solid 1px;
-    border-radius: 5px;
-    margin-left: -200px;
-    position: fixed;
-    left: 50%;
-    top: -100%;
-    z-index: 11;
-    width: 360px;
-    -webkit-transform: translate(0, -500%);
-    -ms-transform: translate(0, -500%);
-    transform: translate(0, -500%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    -moz-transition: -moz-transform 0.3s ease-out;
-    -o-transition: -o-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-  }
-  .modal-body2 {
-    padding: 20px;
-  }
-  .modal-header2,
-  .modal-footer2 {
-    padding: 10px 20px;
-  }
-  .modal-header2 {
-    border-bottom: #eee solid 1px;
-  }
-  .modal-header2 h2 {
-    font-size: 20px;
-  }
-  .modal-footer2 {
-    border-top: #eee solid 1px;
-    text-align: right;
-  }
-  /*ADDED TO STOP SCROLLING TO TOP*/
-  #close2 {
-    display: none;
-  }
-
-@keyframes change {
-    
-0% {
-    background-position: 0 50%;
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #777;
+  height: 3px;
 }
- 50%{
-     background-position: 100% 50%;
- }
- 100% {
-     background-position: 0 50%;
- }
-} 
 
-/*mediaquery jancok */
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
 
- @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-  .textme {
-      width:95%;
-  }
-  .btn.btn-big, .btn.btn-big2  {
-      margin-left: -60px;
-  } 
-   .jancuk {
-     width:100%;
-     
-   }
-  
+input[type="range"]::-moz-range-track {
+  background-color: #777;
+  height: 3px;
+}
+
+input[type="range"]::-ms-track {
+  background-color: #777;
+  height: 3px;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background-color: HotPink;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background-color: black;
 }
