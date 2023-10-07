@@ -5,7 +5,7 @@ const products = [
   {
     id: 1,
     title: "Air Force",
-    price: 119,
+    price: 299,
     colors: [
       {
         code: "black",
@@ -20,7 +20,7 @@ const products = [
   {
     id: 2,
     title: "Air Jordan",
-    price: 149,
+    price: 399,
     colors: [
       {
         code: "lightgray",
@@ -35,7 +35,7 @@ const products = [
   {
     id: 3,
     title: "Blazer",
-    price: 109,
+    price: 199,
     colors: [
       {
         code: "lightgray",
@@ -50,7 +50,7 @@ const products = [
   {
     id: 4,
     title: "Crater",
-    price: 129,
+    price: 499,
     colors: [
       {
         code: "black",
@@ -66,7 +66,7 @@ const products = [
   {
     id: 5,
     title: "Hippie",
-    price: 99,
+    price: 799,
     colors: [
       {
         code: "gray",
@@ -98,7 +98,7 @@ menuItems.forEach((item, index) => {
 
     //change texts of currentProduct
     currentProductTitle.textContent = choosenProduct.title;
-    currentProductPrice.textContent = "$" + choosenProduct.price;
+    currentProductPrice.textContent = "Rp" + choosenProduct.price;
     currentProductImg.src = choosenProduct.colors[0].img;
 
     //assing new colors
