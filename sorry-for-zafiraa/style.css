@@ -1,0 +1,108 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #5f6fa8;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+}
+
+#scene {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 14px 40px;
+  transition: filter 1.5s ease;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.chat {
+  max-width: 380px;
+  margin: auto;
+}
+
+.bubble {
+  background: white;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 18px;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.hidden { display: none; }
+
+.chibi-wrap {
+  margin: 30px 0;
+  animation: hug 3.5s ease-in-out infinite;
+}
+
+.chibi {
+  width: 220px;
+}
+
+button, #waBtn {
+  background: #ff7aa2;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 18px;
+}
+
+button:active {
+  filter: blur(2px);
+}
+
+.ending {
+  margin-top: 24px;
+}
+
+.ending img {
+  width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  margin-bottom: 14px;
+}
+
+.ending-main {
+  font-size: 20px;
+}
+
+.ending-sub {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hug {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}

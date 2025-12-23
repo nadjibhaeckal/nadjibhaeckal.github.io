@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maafin Aku</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+#bg-layer{
+  position:fixed;
+  inset:0;
+  background:#6474a7;
+  z-index:0;
+  overflow:hidden;
+}
+
+/* BACKGROUND HEART FLOAT */
+.bg-heart{
+  position:absolute;
+  color:rgba(255,182,193,.7);
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  from{transform:translateY(-20px)}
+  to{transform:translateY(110vh)}
+}
+
+/* ===== CONTENT ===== */
+.container, #final{
+  position:relative;
+  z-index:2;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+h1{
+  margin-top:20px;
+  font-size:30px;
+}
+
+/* CHAT */
+.chat{
+  max-width:360px;
+  margin:20px auto;
+}
+.bubble{
+  background:white;
+  color:#333;
+  padding:14px;
+  border-radius:18px;
+  margin:10px 0;
+  opacity:0;
+  animation:fadeIn 1s forwards;
+}
+.bubble:nth-child(1){animation-delay:.3s}
+.bubble:nth-child(2){animation-delay:.8s}
+.bubble:nth-child(3){animation-delay:1.3s}
+.bubble:nth-child(4){animation-delay:1.8s}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* CHIBI */
+.chibi-wrap{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:30px 0;
+}
+.chibi{
+  width:70px;
+  animation:breath 3s ease-in-out infinite;
+}
+@keyframes breath{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.06)}
+}
+.hug{
+  animation:hug 2.5s ease-in-out infinite;
+}
+@keyframes hug{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(6px)}
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:20px;
+  position:relative;
+}
+button{
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+}
+.yes{
+  background:#ff7fa2;
+  color:white;
+}
+.no{
+  background:#ffd1dc;
+  filter:blur(1.4px); /* HANYA TOMBOL TIDAK */
+  transition:transform .2s ease;
+}
+
+/* FINAL SCENE */
+#final{
+  display:none;
+}
+#final.show{
+  display:block;
+}
+
+.photo{
+  width:230px;
+  border-radius:18px;
+  margin:20px auto;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.whatsapp{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 26px;
+  background:#25d366;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:16px;
+}
+
+/* FLOWERS */
+.flower{
+  position:fixed;
+  font-size:22px;
+  pointer-events:none;
+  opacity:0;
+  animation:
+    appear 1.2s ease-out forwards,
+    float 4s ease-in-out infinite;
+}
+@keyframes appear{to{opacity:1}}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div id="bg-layer"></div>
+
+<audio id="music" loop>
+  <source src="036_Secondhand_Serenade_-_Fall_For_You.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCENE 1 -->
+<div class="container" id="scene1">
+  <h1>Zafira...</h1>
+
+  <div class="chat">
+    <div class="bubble">Aku minta maaf ya...</div>
+    <div class="bubble">Aku sadar caraku kemarin bikin kamu sedih.</div>
+    <div class="bubble">Aku nyesel, bukan karena takut kehilangan, tapi karena aku sayang.</div>
+    <div class="bubble">Maafin aku ya?</div>
+  </div>
+
+  <div class="chibi-wrap">
+    <svg class="chibi hug" viewBox="0 0 100 150">
+      <circle cx="50" cy="30" r="25" fill="#ffd1dc"/>
+      <rect x="30" y="60" width="40" height="60" rx="20" fill="#ff7fa2"/>
+    </svg>
+
+    <svg class="chibi hug" viewBox="0 0 100 150">
+      <circle cx="50" cy="30" r="25" fill="#ffe4c4"/>
+      <rect x="30" y="60" width="40" height="60" rx="20" fill="#ffb347"/>
+    </svg>
+  </div>
+
+  <div class="buttons">
+    <button class="yes" onclick="yes()">Iya 🤍</button>
+    <button class="no" id="noBtn">Tidak 🙈</button>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div id="final">
+  <h2>Makasih udah maafin aku! 💖</h2>
+
+  <img src="photo.jpeg" class="photo">
+
+  <p style="margin-top:10px">
+    Aku janji pelan-pelan, tapi serius 🤍
+  </p>
+
+  <!-- GANTI NOMOR WA -->
+  <a class="whatsapp"
+     href="https://wa.me/6289668184943?text=Aku%20Maafin%20Tapi%20Ada%20Syarat%20"
+     target="_blank">
+     Chat WhatsApp 💬
+  </a>
+</div>
+
+<script>
+/* BACKGROUND HEARTS */
+for(let i=0;i<50;i++){
+  const h=document.createElement("div");
+  h.className="bg-heart";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=12+Math.random()*18+"px";
+  h.style.animationDuration=5+Math.random()*6+"s";
+  document.getElementById("bg-layer").appendChild(h);
+}
+
+/* NO BUTTON ESCAPE */
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseenter",()=>{
+  const x=Math.random()*200-100;
+  const y=Math.random()*200-100;
+  noBtn.style.transform=`translate(${x}px,${y}px)`;
+});
+
+/* YES CLICK */
+function yes(){
+  document.getElementById("scene1").style.display="none";
+  document.getElementById("final").classList.add("show");
+  document.getElementById("music").play();
+
+  for(let i=0;i<80;i++){
+    const f=document.createElement("div");
+    f.className="flower";
+    f.innerHTML=Math.random()>0.5?"🌸":"💗";
+    f.style.left=Math.random()*window.innerWidth+"px";
+    f.style.top=Math.random()*window.innerHeight+"px";
+    f.style.animationDelay=Math.random()+"s";
+    document.body.appendChild(f);
+  }
+}
+</script>
+
+</body>
+</html>
