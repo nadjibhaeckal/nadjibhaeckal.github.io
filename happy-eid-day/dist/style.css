@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+body {
+  background: -webkit-linear-gradient(-45deg, #82ba73 0%, #81d3c8 100%);
+}
+
+h1, p {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 15px #fff;
+  margin: 0px;
+  margin-top: 70px;
+}
+
+p {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.scale {
+  -webkit-transform: scale(0.5);
+}
+
+.ketupat {
+  width: 50px;
+  height: 50px;
+  display: block;
+  background: #2ca02c;
+  box-shadow: 50px 50px 0px #2ca02c, 50px 0px 0px #7fff2d, 0px 50px 0px #7fff2d, 100px 100px 0px #2ca02c, 50px 100px 0px #7fff2d, 100px 50px 0px #7fff2d, 100px 0px 0px #2ca02c, 0px 100px 0px #2ca02c, -36px -10px -10px #2ca02c, 50px 50px 90px 45px #fff;
+  -webkit-transform: rotate(45deg);
+  margin: 0px auto;
+  margin-top: 50px;
+}
+.ketupat:after {
+  content: "";
+  background: #2ca02c;
+  width: 26px;
+  height: 80px;
+  position: absolute;
+  margin-left: -49px;
+  margin-top: -50px;
+  border-radius: 0px 0px 0px 100px;
+}
+.ketupat:before {
+  content: "";
+  background: #7fff2d;
+  width: 26px;
+  height: 80px;
+  position: absolute;
+  margin-left: -46px;
+  border-radius: 0px 0px 0px 100px;
+  margin-top: -53px;
+  -webkit-transform: rotate(15deg);
+}
