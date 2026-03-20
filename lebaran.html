@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Eid 💚</title>
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(-45deg, #82ba73, #81d3c8, #5fd3a6, #6fbf73);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  text-align: center;
+  color: white;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* TEXT */
+h1 {
+  font-size: 10vw;
+  margin-top: 30px;
+  text-shadow: 0 0 15px white;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+p {
+  font-size: 4.5vw;
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+  opacity: 0;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ketupat */
+.scale {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.ketupat {
+  width: 50px;
+  height: 50px;
+  background: #2ca02c;
+  transform: rotate(45deg);
+  box-shadow: 
+    50px 50px #2ca02c,
+    50px 0 #7fff2d,
+    0 50px #7fff2d,
+    100px 100px #2ca02c,
+    50px 100px #7fff2d,
+    100px 50px #7fff2d,
+    100px 0 #2ca02c,
+    0 100px #2ca02c,
+    50px 50px 90px 45px #fff;
+  position: relative;
+}
+
+.ketupat:after {
+  content: "";
+  background: #2ca02c;
+  width: 26px;
+  height: 80px;
+  position: absolute;
+  left: -49px;
+  top: -50px;
+  border-radius: 0 0 0 100px;
+}
+
+.ketupat:before {
+  content: "";
+  background: #7fff2d;
+  width: 26px;
+  height: 80px;
+  position: absolute;
+  left: -46px;
+  top: -53px;
+  border-radius: 0 0 0 100px;
+  transform: rotate(15deg);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 { font-size: 12vw; }
+  p { font-size: 5vw; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scale">
+  <div class="ketupat"></div>
+</div>
+
+<h1>1447H</h1>
+
+<p class="text">Selamat Hari Raya Idul Fitri, sayang 🤍</p>
+<p class="text">Mohon maaf lahir dan batin ya… maaf kalau selama ini aku masih banyak kurangnya, sering bikin kamu kesel, atau belum jadi yang terbaik buat kamu.</p>
+<p class="text">Di hari yang fitri ini, aku cuma mau bilang… aku bersyukur banget punya kamu. Semoga hubungan kita selalu dijaga, makin kuat, dan penuh kebahagiaan ke depannya.</p>
+<p class="text">Kangen banget, semoga kita bisa segera ketemu dan ngerayain bareng ya 🫶</p>
+
+<!-- 🎧 MUSIC (optional) -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/04/27/audio_0c6f9b2c4f.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Fade in text satu per satu
+const texts = document.querySelectorAll('.text');
+
+texts.forEach((el, i) => {
+  setTimeout(() => {
+    el.style.animation = "fadeIn 2s forwards";
+  }, i * 2000);
+});
+</script>
+
+</body>
+</html>
